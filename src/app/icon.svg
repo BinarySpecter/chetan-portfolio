@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#161512" />
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle"
+        font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace"
+        font-size="23" font-weight="600" letter-spacing="1" fill="#f4f1ea">CC</text>
+  <rect x="30" y="46" width="4" height="4" fill="#8a6d3b" />
+</svg>
