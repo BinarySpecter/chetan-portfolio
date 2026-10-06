@@ -71,8 +71,7 @@ export function Hero() {
               className="rise-in mt-5 max-w-lg text-base leading-relaxed text-mute"
               style={delay(330)}
             >
-              B.Tech IT student in Delhi. Next.js, TypeScript, Python. Open-source
-              contributor.
+              B.Tech IT student in Delhi. Next.js, TypeScript, Python.
             </p>
 
             <ul className="rise-in mt-6 flex flex-wrap gap-x-6 gap-y-2 lg:mt-auto lg:pt-8" style={delay(400)}>

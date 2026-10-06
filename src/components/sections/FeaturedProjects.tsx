@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useId, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useState, type CSSProperties } from "react";
 import type { Project, ProjectStatus } from "@/types/content";
 import { cn } from "@/lib/cn";
 
@@ -14,15 +14,6 @@ const statusLabels: Record<ProjectStatus, string> = {
   archived: "Archived",
 };
 
-const caseSections: { key: keyof Project; label: string }[] = [
-  { key: "why", label: "The problem" },
-  { key: "whatItDoes", label: "What I built" },
-  { key: "howItWorks", label: "How it works" },
-  { key: "technicalDecisions", label: "Technical decisions" },
-  { key: "challenges", label: "Challenges" },
-  { key: "outcome", label: "Outcome" },
-];
-
 function pad(value: number) {
   return String(value).padStart(2, "0");
 }
@@ -30,8 +21,6 @@ function pad(value: number) {
 export function FeaturedProjects({ projects }: { projects: FeaturedProject[] }) {
   const [index, setIndex] = useState(0);
   const [dir, setDir] = useState(1);
-  const [caseOpen, setCaseOpen] = useState(false);
-  const panelId = useId();
   const total = projects.length;
   const active = projects[index];
 
@@ -40,7 +29,6 @@ export function FeaturedProjects({ projects }: { projects: FeaturedProject[] }) 
       const clamped = ((target % total) + total) % total;
       if (clamped === index) return;
       setDir(clamped > index ? 1 : -1);
-      setCaseOpen(false);
       setIndex(clamped);
     },
     [index, total],
@@ -66,10 +54,6 @@ export function FeaturedProjects({ projects }: { projects: FeaturedProject[] }) 
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [goTo, index]);
-
-  const sections = caseSections
-    .map((section) => ({ label: section.label, body: active[section.key] }))
-    .filter((section): section is { label: string; body: string } => typeof section.body === "string" && section.body.length > 0);
 
   const href = active.live ?? active.github;
 
@@ -153,12 +137,6 @@ export function FeaturedProjects({ projects }: { projects: FeaturedProject[] }) 
             <span className="text-mute">{active.year}</span>
           </div>
 
-          {active.learned ? (
-            <p className="mt-6 max-w-md border-l border-rule-strong pl-4 text-sm leading-relaxed text-mute">
-              {active.learned}
-            </p>
-          ) : null}
-
           <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
             {active.github ? (
               <a
@@ -227,58 +205,6 @@ export function FeaturedProjects({ projects }: { projects: FeaturedProject[] }) 
               &#8594;
             </span>
           </button>
-        </div>
-      </div>
-
-      <div className="mt-10 border-t border-rule">
-        <button
-          type="button"
-          onClick={() => setCaseOpen((value) => !value)}
-          aria-expanded={caseOpen}
-          aria-controls={panelId}
-          className="group flex w-full items-center justify-between gap-4 py-4 text-left"
-        >
-          <span className="tag-mono text-ink transition-colors group-hover:text-accent-ink">
-            view case study
-          </span>
-          <span
-            aria-hidden="true"
-            className="relative grid size-5 shrink-0 place-items-center border border-rule text-mute transition-colors group-hover:border-accent-ink group-hover:text-accent-ink"
-          >
-            <span className="absolute h-px w-2.5 bg-current" />
-            <span
-              className={cn(
-                "absolute h-2.5 w-px bg-current transition-transform duration-300 motion-reduce:transition-none",
-                caseOpen && "rotate-90 opacity-0",
-              )}
-            />
-          </span>
-        </button>
-
-        <div
-          id={panelId}
-          aria-hidden={!caseOpen}
-          inert={!caseOpen}
-          className={cn(
-            "grid transition-[grid-template-rows,opacity] duration-500 ease-out motion-reduce:transition-none",
-            caseOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
-          )}
-        >
-          <div className="min-h-0 overflow-hidden">
-            <dl className="flex flex-col gap-6 pb-8">
-              {sections.map((section) => (
-                <div
-                  key={section.label}
-                  className="grid gap-1.5 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6"
-                >
-                  <dt className="tag-mono pt-1 text-[0.62rem] text-mute">{section.label}</dt>
-                  <dd className="max-w-3xl text-sm leading-relaxed text-ink-soft">
-                    {section.body}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
         </div>
       </div>
 

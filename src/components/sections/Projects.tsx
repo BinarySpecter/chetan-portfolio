@@ -14,10 +14,6 @@ export function Projects() {
       title="Selected projects"
       meta={`${featured.length} builds`}
     >
-      <p className="statement max-w-3xl">
-        Shipped projects with live demos and source code.
-      </p>
-
       <FeaturedProjects projects={featured} />
     </Section>
   );

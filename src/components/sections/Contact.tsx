@@ -4,11 +4,7 @@ import { site } from "@/content/site";
 export function Contact() {
   return (
     <Section id="contact" index="09" title="Contact" meta="Open to opportunities">
-      <p className="statement max-w-2xl">Open to work.</p>
-      <p className="mt-5 max-w-xl text-base leading-relaxed text-mute">
-        Internships, software engineering roles, AI and developer tooling, and
-        meaningful collaborations.
-      </p>
+      <p className="statement max-w-2xl">Open to internships, software engineering roles, AI and developer tooling, and collaborations.</p>
 
       <ul className="mt-9 max-w-2xl border-t border-rule">
         {site.socials.map((social) => (

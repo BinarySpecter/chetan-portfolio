@@ -4,8 +4,6 @@ import { now } from "@/content/now";
 export function Now() {
   return (
     <Section id="now" index="02" title="Now" meta="Updated as things change">
-      <p className="statement max-w-3xl">What I&apos;m focused on at the moment.</p>
-
       <ul className="mt-9 border-t border-rule">
         {now.map((item) => (
           <li

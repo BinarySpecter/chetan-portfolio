@@ -1,7 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { Disclosure } from "@/components/ui/Disclosure";
 import { Reveal } from "@/components/ui/Reveal";
-import { experiments } from "@/content/experiments";
 import { buildLog } from "@/content/buildLog";
 
 export function BuildLog() {
@@ -14,48 +13,7 @@ export function BuildLog() {
       title="Build log"
       meta={`${buildLog.length} entries · ${mergedCount} merged`}
     >
-      <p className="statement max-w-3xl">
-        Recent engineering activity.
-      </p>
-
       <div className="mt-9">
-        <span className="tag-mono text-faint">[ in the lab ]</span>
-        <ul className="mt-4 border-t border-rule">
-          {experiments.map((experiment) => (
-            <li
-              key={experiment.name}
-              className="grid gap-2 border-b border-rule py-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] sm:gap-10"
-            >
-              <div className="min-w-0">
-                <p className="text-base font-medium text-ink">
-                  {experiment.href ? (
-                    <a
-                      href={experiment.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-baseline gap-1.5 transition-colors hover:text-accent-ink"
-                    >
-                      {experiment.name}
-                      <span
-                        aria-hidden="true"
-                        className="text-xs transition-transform group-hover:translate-x-1"
-                      >
-                        &#8599;
-                      </span>
-                    </a>
-                  ) : (
-                    experiment.name
-                  )}
-                </p>
-                <p className="tag-mono mt-2 text-[0.62rem] text-faint">{experiment.category}</p>
-              </div>
-              <p className="text-sm leading-relaxed text-mute">{experiment.summary}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="mt-12">
         <span className="tag-mono text-faint">[ log ]</span>
         <div className="mt-4 border-t border-rule">
           {buildLog.map((entry, index) => (

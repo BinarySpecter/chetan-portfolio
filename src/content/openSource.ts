@@ -19,7 +19,7 @@ export const repositories: OpenSourceRepository[] = [
         number: 13556,
         status: "merged",
         description:
-          "Moved the SubjectPublishingHistory partial to a Jinja template. Updated the partial registry and kept the i18n catalogue in sync so translations still resolve.",
+          "Converted a server partial to Jinja. Kept the i18n catalogue in sync.",
         openedAt: "2026-09-05",
         mergedAt: "2026-09-06",
         additions: 46,
@@ -47,7 +47,7 @@ export const repositories: OpenSourceRepository[] = [
         number: 1381,
         status: "merged",
         description:
-          "to_dict() returned a shallow copy, so nested dicts in backend_result were shared by reference with the live receipt and callers could mutate internal state. Now deep-copies the result, with a regression test covering the erasure coordinator.",
+          "Fixed a shared-reference bug in to_dict(). Added a regression test.",
         openedAt: "2026-09-02",
         mergedAt: "2026-09-05",
         additions: 126,
@@ -62,8 +62,7 @@ export const repositories: OpenSourceRepository[] = [
     owner: "GoogleCloudPlatform",
     name: "genmedia-creative-studio",
     repoUrl: "https://github.com/GoogleCloudPlatform/genmedia-creative-studio",
-    description:
-      "GenMedia Creative Studio is a generative media user experience highlighting the use of Gemini, Gemini Omni, Veo, Gemini Image, Gemini TTS, Chirp 3, Lyria and other generative media APIs on Google Cloud.",
+    description: "Google Cloud generative media demo.",
     language: "Jupyter Notebook",
     stars: 1212,
     avatarUrl: "https://github.com/GoogleCloudPlatform.png?size=64",
@@ -76,7 +75,7 @@ export const repositories: OpenSourceRepository[] = [
         number: 1688,
         status: "merged",
         description:
-          "The Babel experiment still defaulted to retired Gemini model IDs, so the demo failed on launch. Updated the default MODEL_ID and the companion Go snippets to a current model.",
+          "Updated retired Gemini model IDs to a current model.",
         openedAt: "2026-08-15",
         mergedAt: "2026-08-15",
         additions: 4,
@@ -91,8 +90,7 @@ export const repositories: OpenSourceRepository[] = [
     owner: "sipyourdrink-ltd",
     name: "bernstein",
     repoUrl: "https://github.com/sipyourdrink-ltd/bernstein",
-    description:
-      "The open-source AI Agents Governance & Orchestration framework: write the rules declaratively, Bernstein enforces them and produces the verifiable, replayable record.",
+    description: "Declarative rules engine for AI agents.",
     language: "Python",
     stars: 1280,
     avatarUrl: "https://github.com/sipyourdrink-ltd.png?size=64",
@@ -105,7 +103,7 @@ export const repositories: OpenSourceRepository[] = [
         number: 3809,
         status: "merged",
         description:
-          "GET /metrics/predictions computed its forecast across every tenant's cost history, leaking one tenant's spend into another's predictions. Scoped the query to the caller's tenant and added an HTTP isolation test to keep it that way.",
+          "Scoped the cost forecast by tenant. Added an isolation test.",
         openedAt: "2026-08-14",
         mergedAt: "2026-08-14",
         additions: 295,

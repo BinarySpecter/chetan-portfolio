@@ -16,14 +16,4 @@ export const recentActivity: ActivityItem[] = [
     label: "Shipped DevLens, an AI screenshot debugger",
     href: "https://getdevlens.vercel.app",
   },
-  {
-    date: "2026-08-15",
-    label: "Updated stale model IDs in a Google sample app",
-    href: "https://github.com/GoogleCloudPlatform/genmedia-creative-studio/pull/1688",
-  },
-  {
-    date: "2026-08-11",
-    label: "Shipped Internet Archaeologist",
-    href: "https://github.com/BinarySpecter/internet-archaeologist",
-  },
 ];

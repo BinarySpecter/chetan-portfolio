@@ -5,5 +5,5 @@ export const personal: PersonalItem[] = [
   { label: "Badminton", value: "occasionally" },
   { label: "Linux", value: "homelab" },
   { label: "Gym", value: "consistency" },
-  { label: "Making", value: "pointless things that become useful" },
+  { label: "Building", value: "side projects" },
 ];

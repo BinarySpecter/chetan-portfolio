@@ -18,10 +18,6 @@ export function Notes() {
       title="Things I’ve figured out"
       meta={published.length ? `${published.length} on X` : "Notes land on X"}
     >
-      <p className="statement max-w-3xl">
-        Short notes on what I learn.
-      </p>
-
       <ul className="mt-9 border-t border-rule">
         {notes.map((note, index) => {
           const isPublished = note.status === "published" && Boolean(note.href);
