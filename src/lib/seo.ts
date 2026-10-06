@@ -3,14 +3,14 @@ import { site } from "@/content/site";
 
 export const metadataBase = new URL(site.url);
 
-const title = `${site.name} — Software, AI & building`;
+const title = `${site.name} | Software, AI and building`;
 
 export function buildMetadata(): Metadata {
   return {
     metadataBase,
     title: {
       default: title,
-      template: `%s — ${site.name}`,
+      template: `%s | ${site.name}`,
     },
     description: site.description,
     keywords: site.keywords,

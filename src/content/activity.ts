@@ -13,7 +13,7 @@ export const recentActivity: ActivityItem[] = [
   },
   {
     date: "2026-08-19",
-    label: "Shipped DevLens — an AI screenshot debugger",
+    label: "Shipped DevLens, an AI screenshot debugger",
     href: "https://getdevlens.vercel.app",
   },
   {

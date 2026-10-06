@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { site } from "@/content/site";
 
-export const alt = `${site.name} — Software, AI & open source`;
+export const alt = `${site.name} | Software, AI and open source`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -53,7 +53,7 @@ export default function OpengraphImage() {
             Chetan Chittori
           </div>
           <div style={{ fontSize: 36, color: "#3a3833", letterSpacing: "-0.01em" }}>
-            Developer interested in software, AI, and how things work.
+            B.Tech IT student building AI developer tools.
           </div>
         </div>
 

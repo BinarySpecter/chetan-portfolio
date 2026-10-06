@@ -11,7 +11,7 @@ export function Work() {
       title="Work"
       meta={`${work.length} role${work.length === 1 ? "" : "s"}`}
     >
-      <p className="statement max-w-3xl">Where I&apos;ve applied what I&apos;m learning.</p>
+      <p className="statement max-w-3xl">Applied experience.</p>
 
       <div className="mt-9 border-t border-rule">
         {work.map((entry, index) => (
@@ -23,7 +23,7 @@ export function Work() {
                   [ {String(index + 1).padStart(2, "0")} ]
                 </span>
                 <span className="min-w-0 flex-1 text-base font-medium text-ink transition-colors group-hover:text-accent-ink">
-                  {entry.org} — {entry.role}
+                  {entry.org} · {entry.role}
                 </span>
                 <span className="mono-label shrink-0">
                   {entry.period}

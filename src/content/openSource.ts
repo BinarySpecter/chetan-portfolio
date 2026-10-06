@@ -19,7 +19,7 @@ export const repositories: OpenSourceRepository[] = [
         number: 13556,
         status: "merged",
         description:
-          "Moved the SubjectPublishingHistory server-rendered partial to a Jinja template — relocating the macro to .html.jinja, updating the partial registry and keeping the i18n string catalogue in sync so translations still resolve.",
+          "Moved the SubjectPublishingHistory partial to a Jinja template. Updated the partial registry and kept the i18n catalogue in sync so translations still resolve.",
         openedAt: "2026-09-05",
         mergedAt: "2026-09-06",
         additions: 46,

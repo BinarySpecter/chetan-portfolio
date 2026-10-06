@@ -15,7 +15,7 @@ export function Projects() {
       meta={`${featured.length} builds`}
     >
       <p className="statement max-w-3xl">
-        A few things I&apos;ve built properly, rather than many I&apos;ve started.
+        Shipped projects with live demos and source code.
       </p>
 
       <FeaturedProjects projects={featured} />

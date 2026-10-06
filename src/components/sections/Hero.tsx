@@ -51,12 +51,12 @@ export function Hero() {
 
             <p className="statement mt-5 max-w-xl">
               <span className="rise-in block" style={delay(210)}>
-                I build software, experiment with AI, and try
+                I build AI developer tools
               </span>
               <span className="rise-in block" style={delay(270)}>
-                to understand{" "}
+                and ship{" "}
                 <span className="relative inline-block">
-                  <span className="relative z-10">how things actually work</span>
+                  <span className="relative z-10">web apps that work</span>
                   <span
                     aria-hidden="true"
                     className="highlight-wash absolute inset-x-[-0.18em] bottom-[0.05em] top-[0.16em] z-0 rounded-[2px] bg-accent-wash"
@@ -71,9 +71,8 @@ export function Hero() {
               className="rise-in mt-5 max-w-lg text-base leading-relaxed text-mute"
               style={delay(330)}
             >
-              I&apos;m a B.Tech Information Technology student in Delhi building software, AI tools,
-              and open-source contributions. I learn by building, breaking, and understanding
-              what&apos;s underneath.
+              B.Tech IT student in Delhi. Next.js, TypeScript, Python. Open-source
+              contributor.
             </p>
 
             <ul className="rise-in mt-6 flex flex-wrap gap-x-6 gap-y-2 lg:mt-auto lg:pt-8" style={delay(400)}>

@@ -6,8 +6,8 @@ export const site: SiteConfig = {
   lastName: "Chittori",
   url: "https://chittori.com",
   eyebrow: "Software · AI · Open source",
-  role: "Developer interested in software, AI, and how things actually work.",
-  statement: "I build software, experiment with AI, and try to understand how things actually work.",
+  role: "B.Tech IT student building AI developer tools.",
+  statement: "I build AI developer tools and ship web apps.",
   location: "Delhi, India",
   degree: "B.Tech Information Technology",
   school: "USICT, GGSIPU",
@@ -20,7 +20,7 @@ export const site: SiteConfig = {
     live: true,
   },
   description:
-    "Chetan Chittori (BinarySpecter) is a B.Tech Information Technology student in Delhi who builds AI-powered developer tools, ships side projects, and contributes to open-source software.",
+    "Chetan Chittori is a B.Tech IT student in Delhi building AI developer tools with Next.js, TypeScript, and Python. He ships side projects and contributes to open source.",
   keywords: [
     "Chetan Chittori",
     "BinarySpecter",

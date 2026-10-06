@@ -15,7 +15,7 @@ export function BuildLog() {
       meta={`${buildLog.length} entries · ${mergedCount} merged`}
     >
       <p className="statement max-w-3xl">
-        A notebook of things I build, break, and learn from.
+        Recent engineering activity.
       </p>
 
       <div className="mt-9">

@@ -20,8 +20,7 @@ export function OpenSource() {
       meta={`${contributionStats.merged} merged · ${contributionStats.repos} repositories`}
     >
       <p className="statement max-w-3xl">
-        I don&apos;t only build from scratch. I contribute to{" "}
-        <span className="marker-hover">software other people maintain</span>.
+        Merged contributions to <span className="marker-hover">software others maintain</span>.
       </p>
 
       <ul className="mt-9 border-t border-rule">

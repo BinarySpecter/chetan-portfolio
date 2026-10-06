@@ -19,7 +19,7 @@ export function Notes() {
       meta={published.length ? `${published.length} on X` : "Notes land on X"}
     >
       <p className="statement max-w-3xl">
-        I write about things after I finally understand them.
+        Short notes on what I learn.
       </p>
 
       <ul className="mt-9 border-t border-rule">
@@ -97,7 +97,7 @@ export function Notes() {
           </span>
         </a>
         <p className="text-sm leading-relaxed text-mute">
-          These aren&apos;t written yet — topics I&apos;m working through.
+          Topics I&apos;m working through. Not written yet.
         </p>
       </div>
     </Section>

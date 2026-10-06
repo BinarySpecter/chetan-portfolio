@@ -12,7 +12,7 @@ export const experiments: Experiment[] = [
   {
     name: "LLM coding workflows",
     category: "Developer tooling",
-    summary: "Coding assistants treated as a system to design — context, tools, review loops.",
+    summary: "Coding assistants as a system. Context, tools, review loops.",
     status: "Ongoing",
   },
   {

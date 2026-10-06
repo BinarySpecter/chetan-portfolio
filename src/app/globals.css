@@ -202,7 +202,7 @@
     background: var(--rule);
   }
 
-  /* Subtle panel surface — only reads as separation next to paper. */
+  /* Subtle panel surface, only visible next to paper. */
   .panel {
     background-color: var(--surface);
     transition:

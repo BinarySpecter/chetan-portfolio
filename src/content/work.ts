@@ -7,7 +7,7 @@ export const work: WorkEntry[] = [
     period: "2025",
     location: "Remote",
     summary:
-      "Research and automation for an agency — turning manual, repetitive processes into scripted flows.",
+      "Research and automation for an agency. Turned manual, repetitive processes into scripted flows.",
     points: [
       "Researched tools, model providers and workflows for internal problem spaces",
       "Helped replace manual, repetitive steps with scripted and automated flows",

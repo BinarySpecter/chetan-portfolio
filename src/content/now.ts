@@ -3,15 +3,15 @@ import type { NowItem } from "@/types/content";
 export const now: NowItem[] = [
   {
     label: "Building",
-    value: "DevLens · IQ Lab",
-  },
-  {
-    label: "Exploring",
-    value: "Agents · developer tooling · systems",
+    value: "DevLens, IQ Lab",
   },
   {
     label: "Learning",
-    value: "Software systems · ML",
+    value: "Systems, ML",
+  },
+  {
+    label: "Contributing",
+    value: "Open source",
   },
   {
     label: "Looking for",
