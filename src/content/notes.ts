@@ -3,13 +3,13 @@ import type { Note } from "@/types/content";
 export const notes: Note[] = [
   {
     title: "Why database indexes finally clicked",
-    description: "B-trees and query performance, explained simply.",
+    description: "How B-trees make queries fast.",
     status: "planned",
     topic: "Databases",
   },
   {
     title: "What I learned building an AI screenshot debugger",
-    description: "Schema-validated output changes what you can build.",
+    description: "Why schemas beat free-text output.",
     status: "planned",
     topic: "AI",
   },
@@ -21,7 +21,7 @@ export const notes: Note[] = [
   },
   {
     title: "Something I had wrong about LLM context",
-    description: "A costly assumption, and what replaced it.",
+    description: "One wrong assumption about LLM context.",
     status: "planned",
     topic: "LLMs",
   },

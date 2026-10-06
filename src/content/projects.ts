@@ -11,15 +11,15 @@ export const projects: Project[] = [
     screenshot: "/projects/devlens/hero.png",
     screenshotAlt:
       "DevLens debug session interface showing a code screenshot beside its structured problem, root cause and fix analysis.",
-    why: "Bugs often start as a screenshot of an error. DevLens reads the image and answers immediately.",
+    why: "Bugs often start as a screenshot. DevLens reads the image and answers immediately.",
     whatItDoes:
-      "Drop in a screenshot of code, a terminal, or a stack trace. Get a structured report with problem, root cause, and a copy-ready fix.",
+      "Upload a screenshot of code, a terminal, or a stack trace. DevLens returns the problem, root cause, and a copy-ready fix.",
     howItWorks:
-      "A Next.js App Router client posts the image to a route handler. Gemini responds through the Vercel AI SDK with Zod-validated JSON. History stays in localStorage, capped at 50. Nothing persists server-side.",
+      "Next.js posts the image to a route handler. Gemini returns Zod-validated JSON. History stays in the browser.",
     technicalDecisions:
-      "Schema-validated output so the report renders as components, not markdown. Browser storage keeps the app account-free and private.",
+      "Schema-validated output renders as components, not markdown. Browser storage keeps it account-free.",
     challenges:
-      "Getting consistent structured output from a vision model. Handling large screenshots without bloating requests.",
+      "Consistent structured output from a vision model. Large screenshots without bloated requests.",
     learned:
       "Structured generation turns a model from a chat window into a UI you can build against.",
     outcome: "Shipped. Live demo available.",
@@ -37,15 +37,15 @@ export const projects: Project[] = [
     screenshot: "/projects/recoverai/hero.png",
     screenshotAlt:
       "RecoverAI dashboard showing revenue at risk, recovered value, incremental recovery versus a do-nothing baseline and recovery performance by failure type.",
-    why: "Failed payments cost merchants revenue, but an LLM should never move money. This tests if AI can help without holding authorization.",
+    why: "Failed payments cost merchants revenue, but an LLM should never move money.",
     whatItDoes:
-      "Diagnoses failed payments and recommends one action from a fixed catalogue. A deterministic policy engine approves, rejects, or holds for review. Every decision goes to an append-only audit trail.",
+      "Diagnoses failures and recommends one action from a fixed catalogue. Rules approve, reject, or hold for review.",
     howItWorks:
-      "The LLM returns schema-validated JSON with diagnosis, action, and confidence. A pure function over request plus history makes the authorization decision. Providers are swappable: offline engine, Gemini, or DeepSeek.",
+      "The model returns validated JSON with diagnosis and confidence. A pure function decides. Providers are swappable.",
     technicalDecisions:
-      "Authorization lives in a pure function. Same inputs always give the same verdict, and the model cannot bypass a rule.",
+      "Authorization lives in a pure function. Same inputs, same verdict. The model cannot bypass a rule.",
     challenges:
-      "Keeping the action catalogue small enough to reason about but useful enough to matter. Adding an economic stopping rule.",
+      "A catalogue small enough to reason about but useful enough to matter.",
     learned:
       "The boundary around the model matters more than the model. Define what it cannot decide.",
     outcome: "Built for the Razorpay AI Buildathon. Live demo hosted.",
@@ -83,15 +83,15 @@ export const projects: Project[] = [
     screenshot: "/projects/bizpilot/hero.png",
     screenshotAlt:
       "BizPilot dashboard showing total revenue, units sold, seven-day forecast, demand trends and recommended inventory actions.",
-    why: "Small businesses have data but little time to interpret it. Most dashboards show what happened. BizPilot suggests what to do next.",
+    why: "Small businesses have data but no time to interpret it. BizPilot suggests what to do next.",
     whatItDoes:
-      "Turns sales and inventory data into signals, insights, recommended actions, and deterministic what-if simulations.",
+      "Turns sales and inventory data into signals, actions, and what-if simulations.",
     howItWorks:
-      "A pipeline of Data to Signals to Insights to Actions to Simulate to Ask. Python and pandas compute numbers and simulations. The LLM only explains results, so decisions stay deterministic.",
+      "Python and pandas compute the numbers. The LLM only explains results, so decisions stay deterministic.",
     technicalDecisions:
-      "Deterministic maths for anything that drives a decision. The model handles language only.",
+      "Deterministic maths for decisions. The model handles language only.",
     challenges:
-      "Making recommendations legible enough for a non-technical owner to trust.",
+      "Recommendations a non-technical owner can trust.",
     learned:
       "If an output drives a decision, it should not depend on model arithmetic.",
     outcome: "Hackathon project. Live demo deployed.",

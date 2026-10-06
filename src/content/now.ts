@@ -13,4 +13,8 @@ export const now: NowItem[] = [
     label: "Contributing",
     value: "Open source",
   },
+  {
+    label: "Looking for",
+    value: "Software / AI internship",
+  },
 ];
