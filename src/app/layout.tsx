@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress, SkipLink, ThemeInitScript } from "@/components/layout/Chrome";
 import { CursorDotField } from "@/components/ui/CursorDotField";
 import { buildMetadata, personJsonLd } from "@/lib/seo";
+import { Analytics } from "@vercel/analytics/next";
 
 const instrument = Instrument_Serif({
   subsets: ["latin"],
@@ -55,6 +56,7 @@ export default function RootLayout({
         <SiteHeader />
         <main id="main">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
