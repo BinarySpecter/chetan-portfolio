@@ -14,6 +14,10 @@ export type SiteConfig = {
   role: string;
   statement: string;
   location: string;
+  coordinates: {
+    lat: number;
+    lon: number;
+  };
   degree: string;
   school: string;
   year: string;

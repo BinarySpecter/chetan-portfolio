@@ -9,6 +9,10 @@ export const site: SiteConfig = {
   role: "B.Tech IT student building AI developer tools.",
   statement: "I build AI developer tools and ship web apps.",
   location: "Delhi, India",
+  coordinates: {
+    lat: 28.6139,
+    lon: 77.209,
+  },
   degree: "B.Tech Information Technology",
   school: "USICT, GGSIPU",
   year: "2026",

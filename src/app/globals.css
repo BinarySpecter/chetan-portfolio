@@ -3,38 +3,42 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-  --paper: #f3efea;
-  --surface: #ece7e1;
-  --surface-2: #e6e0d9;
+  --paper: #f5f0ea;
+  --surface: #efe9e2;
+  --surface-2: #e8e1d9;
   --highlight: #e7d9df;
-  --ink: #1c1a19;
-  --ink-soft: #3a3633;
-  --mute: #716c67;
-  --faint: #8b857f;
-  --rule: #d5cec7;
-  --rule-strong: #c2bab1;
-  --accent: #8b536f;
-  --accent-ink: #74425b;
-  --accent-paper: #f3efea;
-  --accent-wash: #e7d9df;
-  --shadow: 0 1px 2px rgba(28, 26, 25, 0.05), 0 16px 36px -20px rgba(28, 26, 25, 0.16);
+  --ink: #24201e;
+  --ink-soft: #3b3532;
+  --mute: #67605b;
+  --faint: #716863;
+  --rule: #ddd4cc;
+  --rule-strong: #c7bdb4;
+  --accent: #a45f81;
+  --accent-ink: #8a4b6c;
+  --accent-paper: #f5f0ea;
+  --accent-wash: #ecdde4;
+  --grid-line: rgba(36, 32, 30, 0.055);
+  --orb-glow: rgba(164, 95, 129, 0.07);
+  --shadow: 0 1px 2px rgba(36, 32, 30, 0.05), 0 16px 36px -20px rgba(36, 32, 30, 0.16);
 }
 
 [data-theme="dark"] {
-  --paper: #171516;
-  --surface: #201d1d;
-  --surface-2: #262122;
-  --highlight: rgba(180, 122, 149, 0.16);
-  --ink: #e9e2de;
-  --ink-soft: #cfc7c3;
-  --mute: #a59b98;
-  --faint: #7e7472;
-  --rule: #373133;
-  --rule-strong: #4a4244;
-  --accent: #b47a95;
-  --accent-ink: #c58fa8;
-  --accent-paper: #171516;
-  --accent-wash: rgba(180, 122, 149, 0.16);
+  --paper: #1a1718;
+  --surface: #211d1e;
+  --surface-2: #272122;
+  --highlight: rgba(196, 137, 164, 0.18);
+  --ink: #ece4e0;
+  --ink-soft: #d2c9c5;
+  --mute: #a79d99;
+  --faint: #8f8480;
+  --rule: #372f31;
+  --rule-strong: #4b4043;
+  --accent: #c489a4;
+  --accent-ink: #d19bb3;
+  --accent-paper: #1a1718;
+  --accent-wash: rgba(196, 137, 164, 0.19);
+  --grid-line: rgba(236, 228, 224, 0.065);
+  --orb-glow: rgba(196, 137, 164, 0.08);
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.45), 0 20px 46px -22px rgba(0, 0, 0, 0.7);
 }
 
@@ -86,6 +90,7 @@
     color: var(--ink);
     font-family: var(--font-sans);
     font-size: 1rem;
+    font-weight: 450;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -153,15 +158,118 @@
   .mono-label {
     font-family: var(--font-mono);
     font-size: 0.6875rem;
+    font-weight: 500;
     line-height: 1.25;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--mute);
   }
 
+  /* Small square registration mark used beside the wordmark. */
+  .logo-mark {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    width: 1.05rem;
+    height: 1.05rem;
+    border: 1px solid var(--rule-strong);
+  }
+
+  .logo-mark::before {
+    content: "";
+    width: 0.24rem;
+    height: 0.24rem;
+    background: var(--accent);
+  }
+
+  /* Compact technical annotation, sitting above a panel. */
+  .panel-caption {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  .panel-caption::before {
+    content: "//";
+    color: var(--accent);
+    letter-spacing: 0;
+  }
+
+  /* Three tiny status cells beside panel captions. */
+  .panel-cells {
+    display: inline-flex;
+    gap: 0.3rem;
+  }
+
+  .panel-cells span {
+    width: 0.34rem;
+    height: 0.34rem;
+    border: 1px solid var(--rule-strong);
+  }
+
+  .panel-cells span:first-child {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* Coordinate-style metadata block. */
+  .geo-stamp {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0.1rem 0.85rem;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 500;
+    line-height: 1.55;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .geo-stamp dt {
+    color: var(--accent);
+  }
+
+  .geo-stamp dd {
+    margin: 0;
+  }
+
+  /* Stage holding the generated orbital study. */
+  .orbital-stage {
+    position: relative;
+    isolation: isolate;
+    background-image:
+      radial-gradient(46% 54% at 50% 48%, var(--orb-glow), transparent 72%),
+      linear-gradient(to bottom, transparent 49.7%, var(--rule) 49.7%, var(--rule) 50%, transparent 50%);
+    background-repeat: no-repeat;
+  }
+
+  .orbital-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 2.25rem 2.25rem;
+    -webkit-mask-image: radial-gradient(80% 80% at 50% 50%, #000 0%, transparent 78%);
+    mask-image: radial-gradient(80% 80% at 50% 50%, #000 0%, transparent 78%);
+  }
+
+
   .tag-mono {
     font-family: var(--font-mono);
     font-size: 0.6875rem;
+    font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
@@ -553,22 +661,16 @@
   /* Highly subtle paper texture grid behind the hero. */
   .paper-grid {
     background-image:
-      linear-gradient(to right, rgba(28, 26, 25, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(28, 26, 25, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
     background-size: 4.5rem 4.5rem;
     -webkit-mask-image: radial-gradient(120% 90% at 22% 12%, #000 0%, transparent 70%);
     mask-image: radial-gradient(120% 90% at 22% 12%, #000 0%, transparent 70%);
   }
 
-  [data-theme="dark"] .paper-grid {
-    background-image:
-      linear-gradient(to right, rgba(233, 226, 222, 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(233, 226, 222, 0.06) 1px, transparent 1px);
-  }
-
   /* Faint registration mark. */
   .reg-mark {
-    position: relative;
+    position: absolute;
     width: 0.9rem;
     height: 0.9rem;
     color: var(--rule-strong);

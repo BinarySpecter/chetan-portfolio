@@ -142,7 +142,7 @@ export function CommandPalette({ onClose, items }: CommandPaletteProps) {
                 onMouseMove={() => setActive(index)}
                 onClick={() => run(item)}
                 className={cn(
-                  "flex cursor-pointer items-center gap-3 px-3 py-2.5 text-sm",
+                  "flex cursor-pointer items-center gap-3 px-3 py-2.5 text-sm font-medium",
                   index === active ? "bg-ink text-paper" : "text-ink-soft",
                 )}
               >
@@ -150,7 +150,7 @@ export function CommandPalette({ onClose, items }: CommandPaletteProps) {
                 {item.hint ? (
                   <span
                     className={cn(
-                      "font-mono text-[0.65rem] uppercase tracking-[0.12em]",
+                      "font-mono text-[0.65rem] font-medium uppercase tracking-[0.12em]",
                       index === active ? "text-paper/60" : "text-faint",
                     )}
                   >
@@ -159,7 +159,7 @@ export function CommandPalette({ onClose, items }: CommandPaletteProps) {
                 ) : null}
                 <span
                   className={cn(
-                    "font-mono text-[0.65rem] uppercase tracking-[0.12em]",
+                    "font-mono text-[0.65rem] font-medium uppercase tracking-[0.12em]",
                     index === active ? "text-paper/60" : "text-faint",
                   )}
                 >

@@ -12,7 +12,7 @@ export function Now() {
           >
             <span className="tag-mono text-mute">{item.label}</span>
             <span className="min-w-0">
-              <span className="block text-base leading-snug text-ink">{item.value}</span>
+              <span className="block text-base font-medium leading-snug text-ink">{item.value}</span>
               {item.meta ? (
                 <span className="tag-mono mt-1.5 block text-faint">{item.meta}</span>
               ) : null}

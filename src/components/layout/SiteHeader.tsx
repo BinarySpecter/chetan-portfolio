@@ -69,7 +69,8 @@ export function SiteHeader() {
   const go = useCallback((href: string) => {
     const el = document.getElementById(href.slice(1));
     if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
   }, []);
 
   useEffect(() => {
@@ -125,16 +126,18 @@ export function SiteHeader() {
             href="#top"
             onClick={(event) => {
               event.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+              window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
             }}
-            className="whitespace-nowrap text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-ink transition-colors hover:text-accent-ink sm:text-[0.78rem] sm:tracking-[0.16em]"
+            className="group flex items-center gap-2.5 whitespace-nowrap text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-ink transition-colors hover:text-accent-ink sm:text-[0.78rem] sm:tracking-[0.16em]"
           >
+            <span aria-hidden="true" className="logo-mark" />
             {site.name}
-            <span className="text-ink">.</span>
+            <span className="-ml-1.5 text-ink">.</span>
           </a>
 
-          <nav aria-label="Primary" className="ml-auto hidden items-center gap-6 md:flex">
-            {navItems.map((item) => {
+          <nav aria-label="Primary" className="ml-auto hidden items-center gap-4 lg:flex xl:gap-5">
+            {navItems.map((item, index) => {
               const isActive = active === item.href.slice(1);
               return (
                 <a
@@ -146,22 +149,31 @@ export function SiteHeader() {
                   }}
                   aria-current={isActive ? "location" : undefined}
                   className={cn(
-                    "border-b border-transparent pb-0.5 text-[0.7rem] uppercase tracking-[0.14em] transition-[color,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
-                    isActive ? "border-accent-ink text-ink" : "text-mute hover:text-ink",
+                    "group flex items-center gap-1.5 whitespace-nowrap border-b-2 border-transparent pb-1 text-[0.7rem] font-medium uppercase tracking-[0.14em] transition-[color,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                    isActive ? "border-accent text-ink" : "text-mute hover:text-ink",
                   )}
                 >
+                  <span
+                    aria-hidden="true"
+                    className={cn(
+                      "hidden whitespace-nowrap font-mono text-[0.56rem] tracking-[0.08em] transition-colors xl:inline",
+                      isActive ? "text-accent-ink" : "text-faint group-hover:text-mute",
+                    )}
+                  >
+                    [ {String(index + 1).padStart(2, "0")} ]
+                  </span>
                   {item.label}
                 </a>
               );
             })}
           </nav>
 
-          <div className="ml-auto flex items-center gap-3 md:ml-0">
+          <div className="ml-auto flex items-center gap-3 lg:ml-0">
             <button
               type="button"
               onClick={() => setPaletteOpen(true)}
               aria-label="Open search"
-              className="hidden font-mono text-[0.7rem] tracking-[0.08em] text-mute transition-colors hover:text-accent-ink sm:block"
+              className="hidden font-mono text-[0.7rem] font-medium tracking-[0.08em] text-mute transition-colors hover:text-accent-ink sm:block"
             >
               &#8984;K
             </button>
@@ -183,7 +195,7 @@ export function SiteHeader() {
               aria-expanded={menuOpen}
               aria-controls="mobile-nav"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
-              className="flex size-8 items-center justify-center text-mute transition-colors hover:text-accent-ink md:hidden"
+              className="flex size-8 items-center justify-center text-mute transition-colors hover:text-accent-ink lg:hidden"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 {menuOpen ? (
@@ -194,12 +206,17 @@ export function SiteHeader() {
               </svg>
             </button>
           </div>
+
+          <span aria-hidden="true" className="mx-1 hidden h-7 w-px shrink-0 bg-rule min-[1400px]:block" />
+          <span className="hidden whitespace-nowrap font-mono text-[0.62rem] font-medium uppercase tracking-[0.14em] text-mute min-[1400px]:block">
+            {site.location}
+          </span>
         </div>
 
         {menuOpen ? (
-          <nav id="mobile-nav" aria-label="Mobile" className="border-t border-rule bg-paper md:hidden">
+          <nav id="mobile-nav" aria-label="Mobile" className="border-t border-rule bg-paper lg:hidden">
             <ul className="shell flex flex-col py-1">
-              {navItems.map((item) => {
+              {navItems.map((item, index) => {
                 return (
                   <li key={item.href}>
                     <a
@@ -209,10 +226,15 @@ export function SiteHeader() {
                         setMenuOpen(false);
                         go(item.href);
                       }}
-                      className="flex items-center justify-between border-b border-rule py-3.5 text-[0.72rem] uppercase tracking-[0.14em] text-ink"
+                      className="flex items-center justify-between border-b border-rule py-3.5 text-[0.72rem] font-medium uppercase tracking-[0.14em] text-ink"
                     >
-                      {item.label}
-                      <span aria-hidden="true" className="text-faint">
+                      <span className="flex items-center gap-3">
+                        <span aria-hidden="true" className="text-[0.58rem] tracking-[0.1em] text-faint">
+                          [ {String(index + 1).padStart(2, "0")} ]
+                        </span>
+                        {item.label}
+                      </span>
+                      <span aria-hidden="true" className="font-mono text-[0.6rem] tracking-[0.04em] text-faint">
                         {item.href}
                       </span>
                     </a>

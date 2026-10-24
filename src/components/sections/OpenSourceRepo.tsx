@@ -57,7 +57,7 @@ export function OpenSourceRepo({ repo }: { repo: OpenSourceRepository }) {
               href={repo.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="min-w-0 break-words font-mono text-xs leading-snug text-ink transition-colors hover:text-accent-ink group-hover/row:text-accent-ink"
+              className="min-w-0 break-words font-mono text-xs font-medium leading-snug text-ink transition-colors hover:text-accent-ink group-hover/row:text-accent-ink"
             >
               {repo.repo}
             </a>
@@ -86,7 +86,7 @@ export function OpenSourceRepo({ repo }: { repo: OpenSourceRepository }) {
                 </span>
                 <span>{statusLabels[primary.status]}</span>
               </p>
-              <h3 className="mt-2 break-words text-base font-medium leading-snug text-ink">
+              <h3 className="mt-2 break-words text-base font-semibold leading-snug text-ink">
                 <a
                   href={primary.url}
                   target="_blank"

@@ -9,11 +9,12 @@ export function Footer() {
       <div className="shell py-14 sm:py-16">
         <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_auto]">
           <div>
-            <p className="text-lg font-semibold uppercase tracking-[0.14em] text-ink">
+            <p className="flex items-center gap-2.5 text-lg font-semibold uppercase tracking-[0.14em] text-ink">
+              <span aria-hidden="true" className="logo-mark" />
               {site.name}
-              <span className="text-ink">.</span>
+              <span className="-ml-1.5 text-ink">.</span>
             </p>
-            <p className="mt-3 text-sm text-mute">Software &middot; AI &middot; Experiments</p>
+            <p className="mt-3 text-sm font-medium text-mute">Software &middot; AI &middot; Experiments</p>
             <p className="mono-label mt-2">{site.location}</p>
           </div>
 
@@ -22,7 +23,7 @@ export function Footer() {
               <a
                 key={item.href}
                 href={item.href}
-                className="u-line text-[0.7rem] uppercase tracking-[0.14em] text-mute transition-colors hover:text-accent-ink"
+                className="u-line text-[0.7rem] font-medium uppercase tracking-[0.14em] text-mute transition-colors hover:text-accent-ink"
               >
                 {item.label}
               </a>
@@ -37,24 +38,24 @@ export function Footer() {
               href={social.href}
               target={social.href.startsWith("http") ? "_blank" : undefined}
               rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="u-line font-mono text-[0.68rem] uppercase tracking-[0.12em] text-mute transition-colors hover:text-accent-ink"
+              className="u-line font-mono text-[0.68rem] font-medium uppercase tracking-[0.12em] text-mute transition-colors hover:text-accent-ink"
             >
               {social.label}
             </a>
           ))}
           <a
             href="#top"
-            className="u-line ml-auto font-mono text-[0.68rem] uppercase tracking-[0.12em] text-mute transition-colors hover:text-accent-ink"
+            className="u-line ml-auto font-mono text-[0.68rem] font-medium uppercase tracking-[0.12em] text-mute transition-colors hover:text-accent-ink"
           >
             Back to top &uarr;
           </a>
         </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-between gap-2">
-          <p className="font-mono text-[0.66rem] tracking-[0.06em] text-faint">
+          <p className="font-mono text-[0.66rem] font-medium tracking-[0.06em] text-faint">
             &copy; {year} {site.name}. All rights reserved.
           </p>
-          <p className="font-mono text-[0.66rem] tracking-[0.06em] text-faint">
+          <p className="font-mono text-[0.66rem] font-medium tracking-[0.06em] text-faint">
             Built by {site.name}.
           </p>
         </div>

@@ -125,7 +125,7 @@ export function FeaturedProjects({ projects }: { projects: FeaturedProject[] }) 
         >
           <span className="tag-mono text-accent-ink">{active.category}</span>
 
-          <h3 className="mt-3 font-serif text-[clamp(1.9rem,3.2vw,2.6rem)] leading-[1.03] tracking-[-0.01em] text-ink">
+          <h3 className="mt-3 font-serif text-[clamp(1.9rem,3.2vw,2.6rem)] font-normal leading-[1.03] tracking-[-0.01em] text-ink">
             {active.name}
           </h3>
 
@@ -289,7 +289,7 @@ export function FeaturedProjects({ projects }: { projects: FeaturedProject[] }) 
               >
                 <span
                   className={cn(
-                    "tag-mono w-7 shrink-0 text-[0.62rem]",
+                    "tag-mono shrink-0 whitespace-nowrap text-[0.62rem]",
                     isActive ? "text-accent-ink" : "text-faint",
                   )}
                 >
@@ -297,7 +297,7 @@ export function FeaturedProjects({ projects }: { projects: FeaturedProject[] }) 
                 </span>
                 <span
                   className={cn(
-                    "shrink-0 text-sm transition-colors",
+                    "shrink-0 text-sm font-medium transition-colors",
                     isActive ? "text-ink" : "text-ink-soft group-hover:text-ink",
                   )}
                 >

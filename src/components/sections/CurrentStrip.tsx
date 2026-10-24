@@ -26,7 +26,10 @@ export function CurrentStrip() {
 
         <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
           {currentStrip.map((item) => (
-            <li key={item.label} className="tag-mono flex items-center gap-2 text-[0.62rem]">
+            <li
+              key={item.label}
+              className="tag-mono flex items-center gap-2 text-[0.62rem] sm:border-l sm:border-rule sm:pl-6 sm:first:border-l-0 sm:first:pl-0"
+            >
               <span className="text-faint">{item.label}</span>
               <span className="text-mute">{item.value}</span>
             </li>

@@ -23,7 +23,7 @@ export function BuildLog() {
               className="grid gap-2 border-b border-rule py-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] sm:gap-10"
             >
               <div className="min-w-0">
-                <p className="text-base font-medium text-ink">
+                <p className="text-base font-semibold text-ink">
                   {experiment.href ? (
                     <a
                       href={experiment.href}

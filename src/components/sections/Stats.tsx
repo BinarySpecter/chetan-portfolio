@@ -14,7 +14,7 @@ export function Stats() {
                 <span className="h-px w-5 bg-accent opacity-60" />
               </span>
 
-              <span className="font-serif text-4xl leading-none tabular-nums text-ink sm:text-5xl">
+              <span className="font-serif text-4xl font-normal leading-none tabular-nums text-ink sm:text-5xl">
                 <StatCounter value={stat.value} />
                 {stat.suffix ? <span>{stat.suffix}</span> : null}
               </span>

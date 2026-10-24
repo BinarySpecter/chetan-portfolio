@@ -22,7 +22,7 @@ export function Work() {
                 <span className="tag-mono hidden text-faint sm:block">
                   [ {String(index + 1).padStart(2, "0")} ]
                 </span>
-                <span className="min-w-0 flex-1 text-base font-medium text-ink transition-colors group-hover:text-accent-ink">
+                <span className="min-w-0 flex-1 text-base font-semibold text-ink transition-colors group-hover:text-accent-ink">
                   {entry.org} · {entry.role}
                 </span>
                 <span className="mono-label shrink-0">

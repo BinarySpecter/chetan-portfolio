@@ -9,7 +9,7 @@ export function ProcessDiagram({ className }: { className?: string }) {
       aria-label="Working loop: idea, build, experiment, break, understand, write, then repeat until it clicks."
     >
       <div className="flex items-center justify-between gap-3 px-4 pb-1 pt-3.5">
-        <span className="tag-mono text-faint">process</span>
+        <span className="panel-caption">process</span>
         <span className="tag-mono text-[0.6rem] text-faint">repeat until it clicks</span>
       </div>
 
@@ -28,7 +28,7 @@ export function ProcessDiagram({ className }: { className?: string }) {
                 className="process-step-dot relative z-10 size-1.5 justify-self-center rounded-full border border-rule-strong bg-paper"
               />
               <span
-                className="process-node inline-flex justify-self-start border border-rule px-2.5 py-1 font-mono text-[0.6rem] uppercase tracking-[0.12em] text-mute"
+                className="process-node inline-flex justify-self-start border border-rule px-2.5 py-1 font-mono text-[0.6rem] font-medium uppercase tracking-[0.12em] text-mute"
                 style={{ "--node-index": index } as CSSProperties}
                 data-active={index === 0 ? "true" : undefined}
               >

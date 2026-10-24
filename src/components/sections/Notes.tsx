@@ -31,8 +31,8 @@ export function Notes() {
                 <span
                   className={
                     isPublished
-                      ? "block text-base font-medium text-ink transition-colors group-hover:text-accent-ink"
-                      : "block text-base font-medium text-ink-soft"
+                      ? "block text-base font-semibold text-ink transition-colors group-hover:text-accent-ink"
+                      : "block text-base font-semibold text-ink-soft"
                   }
                 >
                   {note.title}
